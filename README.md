@@ -96,6 +96,13 @@ evens, odds := sliceutil.Partition([]int{1, 2, 3, 4, 5}, func(n int) bool {
 | `Union[T]` | All unique elements from both |
 | `SymmetricDifference[T]` | Elements in either but not both |
 
+## Development
+
+```bash
+go test ./...
+go vet ./...
+```
+
 ## License
 
 MIT
