@@ -8,7 +8,7 @@ Generic slice utilities for Go. Map, filter, reduce, and more with type safety.
 
 ## Installation
 
-```sh
+```bash
 go get github.com/philiprehberger/go-sliceutil
 ```
 
