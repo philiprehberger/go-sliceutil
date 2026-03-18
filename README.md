@@ -4,7 +4,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-sliceutil.svg)](https://pkg.go.dev/github.com/philiprehberger/go-sliceutil)
 [![License](https://img.shields.io/github/license/philiprehberger/go-sliceutil)](LICENSE)
 
-Generic slice utilities for Go. Map, filter, reduce, and more with type safety.
+Generic slice utilities for Go. Map, filter, reduce, and more with type safety
 
 ## Installation
 
