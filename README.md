@@ -60,6 +60,60 @@ all := sliceutil.Union([]int{1, 2, 3}, []int{2, 3, 4})
 // [1, 2, 3, 4]
 ```
 
+### Find & Search
+
+```go
+val, ok := sliceutil.Find([]int{1, 2, 3, 4}, func(n int) bool {
+    return n > 2
+})
+// val: 3, ok: true
+
+idx := sliceutil.FindIndex([]string{"a", "b", "c"}, func(s string) bool {
+    return s == "b"
+})
+// 1
+
+hasEven := sliceutil.Any([]int{1, 3, 4}, func(n int) bool {
+    return n%2 == 0
+})
+// true
+
+allPositive := sliceutil.All([]int{1, 2, 3}, func(n int) bool {
+    return n > 0
+})
+// true
+```
+
+### Sort, Take & Drop
+
+```go
+type Item struct {
+    Name  string
+    Price int
+}
+
+sorted := sliceutil.SortBy(items, func(i Item) int {
+    return i.Price
+})
+// sorted by price ascending
+
+first3 := sliceutil.Take([]int{1, 2, 3, 4, 5}, 3)
+// [1, 2, 3]
+
+rest := sliceutil.Drop([]int{1, 2, 3, 4, 5}, 2)
+// [3, 4, 5]
+```
+
+### Compact
+
+```go
+cleaned := sliceutil.Compact([]string{"", "hello", "", "world"})
+// ["hello", "world"]
+
+nonZero := sliceutil.Compact([]int{0, 1, 0, 2, 3})
+// [1, 2, 3]
+```
+
 ### Partition
 
 ```go
@@ -89,6 +143,14 @@ evens, odds := sliceutil.Partition([]int{1, 2, 3, 4, 5}, func(n int) bool {
 | `IndexOf[T]` | Return index or -1 |
 | `First[T]` | Return first element |
 | `Last[T]` | Return last element |
+| `Find[T]` | First element matching predicate |
+| `FindIndex[T]` | Index of first match, -1 if none |
+| `Any[T]` | True if any element matches |
+| `All[T]` | True if all elements match |
+| `SortBy[T, K]` | Sort by extracted key |
+| `Take[T]` | Return first n elements |
+| `Drop[T]` | Skip first n elements |
+| `Compact[T]` | Remove zero-value elements |
 | `Intersect[T]` | Elements in both slices |
 | `Difference[T]` | Elements in first but not second |
 | `Union[T]` | All unique elements from both |

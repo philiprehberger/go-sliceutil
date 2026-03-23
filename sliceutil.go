@@ -5,7 +5,11 @@
 // All functions are generic and work with any compatible types.
 package sliceutil
 
-import "math/rand/v2"
+import (
+	"cmp"
+	"math/rand/v2"
+	"slices"
+)
 
 // Pair holds two values of potentially different types.
 type Pair[T any, U any] struct {
@@ -198,4 +202,100 @@ func First[T any](s []T) (T, bool) {
 		return zero, false
 	}
 	return s[0], true
+}
+
+// Find returns the first element matching the predicate and true,
+// or the zero value and false if no element matches.
+func Find[T any](s []T, pred func(T) bool) (T, bool) {
+	for _, v := range s {
+		if pred(v) {
+			return v, true
+		}
+	}
+	var zero T
+	return zero, false
+}
+
+// FindIndex returns the index of the first element matching the predicate,
+// or -1 if no element matches.
+func FindIndex[T any](s []T, pred func(T) bool) int {
+	for i, v := range s {
+		if pred(v) {
+			return i
+		}
+	}
+	return -1
+}
+
+// Any reports whether any element in the slice satisfies the predicate.
+func Any[T any](s []T, pred func(T) bool) bool {
+	for _, v := range s {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
+}
+
+// All reports whether all elements in the slice satisfy the predicate.
+// Returns true for an empty slice.
+func All[T any](s []T, pred func(T) bool) bool {
+	for _, v := range s {
+		if !pred(v) {
+			return false
+		}
+	}
+	return true
+}
+
+// SortBy returns a new slice sorted by a key extracted from each element.
+func SortBy[T any, K cmp.Ordered](s []T, key func(T) K) []T {
+	result := make([]T, len(s))
+	copy(result, s)
+	slices.SortFunc(result, func(a, b T) int {
+		return cmp.Compare(key(a), key(b))
+	})
+	return result
+}
+
+// Take returns the first n elements of the slice.
+// If n exceeds the length, the entire slice is returned.
+// If n is negative, it is treated as 0.
+func Take[T any](s []T, n int) []T {
+	if n < 0 {
+		n = 0
+	}
+	if n > len(s) {
+		n = len(s)
+	}
+	result := make([]T, n)
+	copy(result, s[:n])
+	return result
+}
+
+// Drop returns a new slice with the first n elements removed.
+// If n exceeds the length, an empty slice is returned.
+// If n is negative, it is treated as 0.
+func Drop[T any](s []T, n int) []T {
+	if n < 0 {
+		n = 0
+	}
+	if n > len(s) {
+		n = len(s)
+	}
+	result := make([]T, len(s)-n)
+	copy(result, s[n:])
+	return result
+}
+
+// Compact returns a new slice with all zero-value elements removed.
+func Compact[T comparable](s []T) []T {
+	var zero T
+	result := make([]T, 0, len(s))
+	for _, v := range s {
+		if v != zero {
+			result = append(result, v)
+		}
+	}
+	return result
 }
