@@ -1,6 +1,6 @@
 # go-sliceutil
 
-[![CI](https://github.com/philiprehberger/go-sliceutil/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/go-sliceutil/actions/workflows/ci.yml) [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-sliceutil.svg)](https://pkg.go.dev/github.com/philiprehberger/go-sliceutil) [![License](https://img.shields.io/github/license/philiprehberger/go-sliceutil)](LICENSE)
+[![CI](https://github.com/philiprehberger/go-sliceutil/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/go-sliceutil/actions/workflows/ci.yml) [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-sliceutil.svg)](https://pkg.go.dev/github.com/philiprehberger/go-sliceutil) [![License](https://img.shields.io/github/license/philiprehberger/go-sliceutil)](LICENSE) [![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Generic slice utilities for Go. Map, filter, reduce, and more with type safety
 
