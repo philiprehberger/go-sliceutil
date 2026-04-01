@@ -1,6 +1,8 @@
 # go-sliceutil
 
-[![CI](https://github.com/philiprehberger/go-sliceutil/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/go-sliceutil/actions/workflows/ci.yml) [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-sliceutil.svg)](https://pkg.go.dev/github.com/philiprehberger/go-sliceutil) [![License](https://img.shields.io/github/license/philiprehberger/go-sliceutil)](LICENSE) [![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![CI](https://github.com/philiprehberger/go-sliceutil/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/go-sliceutil/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-sliceutil.svg)](https://pkg.go.dev/github.com/philiprehberger/go-sliceutil)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/go-sliceutil)](https://github.com/philiprehberger/go-sliceutil/commits/main)
 
 Generic slice utilities for Go. Map, filter, reduce, and more with type safety
 
@@ -163,6 +165,24 @@ go test ./...
 go vet ./...
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/go-sliceutil)
+
+🐛 [Report issues](https://github.com/philiprehberger/go-sliceutil/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/go-sliceutil/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
